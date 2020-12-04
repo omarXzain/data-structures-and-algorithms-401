@@ -6,7 +6,6 @@ class Node:
 class Linkedlist:
     def __init__(self):
         self.head = None
-        self.size = 0
 
 # *********************************************
 
