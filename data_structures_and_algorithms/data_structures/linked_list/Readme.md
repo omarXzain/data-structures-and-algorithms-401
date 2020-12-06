@@ -20,4 +20,4 @@ representing all the values
 - to_string: O(n)
 
 ### White board
-![](/assets/linked-list.png)
+![img](../../../assets/linked-list.png)
