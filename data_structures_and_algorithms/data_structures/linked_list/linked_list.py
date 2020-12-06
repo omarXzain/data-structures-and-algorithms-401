@@ -24,7 +24,6 @@ class Linkedlist:
 
 # *********************************************
 
-
     def includes(self, value):
         current = self.head
         while current.next != None:
@@ -33,7 +32,6 @@ class Linkedlist:
             else:
                 current = current.next
                 return False
-
 
 # ***********************************************
 

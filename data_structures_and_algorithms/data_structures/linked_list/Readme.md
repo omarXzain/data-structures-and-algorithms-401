@@ -12,7 +12,7 @@ to the head
 - Define a method called includes that returns 
 a boolean
 - Define a method called toString that returns a string
-representing all the values
+representing all the values.
 
 ### Big(O)
 - insert: O(1)
