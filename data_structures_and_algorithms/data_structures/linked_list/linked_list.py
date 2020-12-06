@@ -24,14 +24,16 @@ class Linkedlist:
 
 # *********************************************
 
+
     def includes(self, value):
         current = self.head
-        if current.value == value:
-            return True
-        elif current.next.value == value:
-            return False
-        else: 
-            return False
+        while current.next != None:
+            if current.value == value:
+                return True
+            else:
+                current = current.next
+                return False
+
 
 # ***********************************************
 
