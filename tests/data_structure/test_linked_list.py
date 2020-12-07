@@ -8,23 +8,23 @@ def test_instance():
 
 
 def test_insert(prep_ll):
-    assert prep_ll.head.value == 15
-    assert prep_ll.head.next.value == 8
-    assert prep_ll.head.next.next.value == 555
-    assert prep_ll.head.next.next.next.value == 6
-    assert prep_ll.head.next.next.next.next.value == 555
-    assert prep_ll.head.next.next.next.next.next.value == 3
+    assert prep_ll.head.value == 3
+    assert prep_ll.head.next.value == 555
+    assert prep_ll.head.next.next.value == 6
+    assert prep_ll.head.next.next.next.value == 555
+    assert prep_ll.head.next.next.next.next.value == 8
+    assert prep_ll.head.next.next.next.next.next.value == 15
     assert prep_ll.head.next.next.next.next.next.next == None
 
 def test_includes(prep_ll):
     assert prep_ll.includes(15)
-    assert prep_ll.head.next.value == 8
+    assert prep_ll.head.next.value == 555
     assert prep_ll.head.next.next.value != 10
     assert not prep_ll.includes(10)
 
 def test_to_string(prep_ll):
     actual = prep_ll.to_string()
-    expected = f' { {15} } -> { {8} } -> { {555} } -> { {6} } -> { {555} } -> { {3} } -> NULL'
+    expected = f' { {3} } -> { {555} } -> { {6} } -> { {555} } -> { {8} } -> { {15} } -> NULL'
     assert actual == expected
 
 
@@ -43,11 +43,30 @@ def test_append2():
     
 
 def test_insertBefore(prep_ll):
-    assert prep_ll.head.next.next.value == 555
+    assert prep_ll.head.next.next.next.value == 555
 
 
 def test_insertAfter(prep_ll):
-    assert prep_ll.head.next.next.next.next.value == 555
+    assert prep_ll.head.next.next.next.next.next.value == 15
+
+
+def test_kth_from_end(prep_ll):
+    actual = prep_ll.ll_kth_from_end(0)
+    expected = 15
+    assert actual == expected
+
+
+def test_kth_from_end2(prep_ll):
+    actual = prep_ll.ll_kth_from_end(2)
+    expected = 555
+    assert actual == expected
+    
+
+def test_kth_from_end3(prep_ll):
+    actual = prep_ll.ll_kth_from_end(6)
+    expected = 'Exception'
+    assert actual == expected
+
 
     
 
