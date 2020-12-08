@@ -82,7 +82,7 @@ class Linkedlist:
                     newNode.next = old
 
 # ***********************************************
-       
+
     def insertAfter(self, value, newVal):
         newNode = Node(value)
         if self.head is None:
@@ -121,10 +121,22 @@ class Linkedlist:
         
         return current.value
 
+# *************************************************
+    def zip_lists(self, list2):
+        current1 = self.head
+        current2 = list2.head
+        while current1 and current2:
+            self.append(current1.value)
+            self.append(current2.value)
+            current1 = current1.next
+            current2 = current2.next
+        return self
 
+# *************************************************
 
 if __name__ == "__main__":
     list1 = Linkedlist()
+    list2 = Linkedlist()
     # print('************ insert **********')
     list1.insert(2)
     list1.insert(8)
@@ -151,11 +163,17 @@ if __name__ == "__main__":
     list1.append(5)
     list1.append(6)
     list1.append(7)
+    list2.append(9)
+    list2.append(10)
+    list2.append(11)
     # print('*********** insert before ***********')
     list1.insertBefore(555, 6)
     # print('***********insert after ***********')
     list1.insertAfter(555, 6)
+    print('*********** zipped List ***********')
+    # print(list1.zip_lists(list2))
     print(' *********** to string ***********')
     print(list1.to_string())
+    # print(list2.to_string())
     print(' **********************')
 

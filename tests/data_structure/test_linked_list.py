@@ -68,8 +68,50 @@ def test_kth_from_end3(prep_ll):
     assert actual == expected
 
 
-    
+def test_zip_2nd_empty():
+    list1 = Linkedlist()
+    list2 = Linkedlist()
+    list1.append(1)
+    list1.append(2)
+    list1.append(3)
+    list1.zip_lists(list2)
+    print(list1.to_string())
+    assert list1.to_string() == " {1} -> {2} -> {3} -> NULL"
 
+def test_zio_same_length():
+    list1 = Linkedlist()
+    list2 = Linkedlist()
+    list1.append(1)
+    list1.append(2)
+    list1.append(3)
+    list2.append(4)
+    list2.append(5)
+    list2.append(6)
+    list1.zip_lists(list2)
+    assert list1.to_string() == " {1} -> {2} -> {3} -> {1} -> {4} -> {2} -> {5} -> {3} -> {6} -> NULL"
+
+def test_zio_1st_longer():
+    list1 = Linkedlist()
+    list2 = Linkedlist()
+    list1.append(1)
+    list1.append(2)
+    list1.append(3)
+    list2.append(4)
+    list2.append(5)
+    list1.zip_lists(list2)
+    assert list1.to_string() == " {1} -> {2} -> {3} -> {1} -> {4} -> {2} -> {5} -> NULL"
+
+def test_zio_2nd_longer():
+    list1 = Linkedlist()
+    list2 = Linkedlist()
+    list1.append(1)
+    list2.append(4)
+    list2.append(5)
+    list1.zip_lists(list2)
+    actual = list1.to_string()
+    expected =  " {1} -> {1} -> {4} -> {1} -> {5} -> NULL"
+    assert  actual == expected
+    
 @pytest.fixture
 def prep_ll():
     list1 = Linkedlist()
