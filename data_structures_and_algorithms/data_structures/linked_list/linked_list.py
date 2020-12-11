@@ -122,19 +122,25 @@ class Linkedlist:
         return current.value
 
 # *************************************************
-    def zip_lists(self, list2):
-        current1 = self.head
-        current2 = list2.head
-        while current1 and current2:
-            self.append(current1.value)
-            self.append(current2.value)
-            current1 = current1.next
-            current2 = current2.next
-        return self
 
-# *************************************************
+    ## Fixed
+    # def zip_lists(self, list2):
+    #     output = Linkedlist()
+    #     current1 = self.head
+    #     current2 = list2.head
+    #     print(current2)
+    #     while current1 and current2:
+    #         output.append(current1.value)
+    #         output.append(current2.value)
+    #         current1 = current1.next
+    #         current2 = current2.next
+    #     return output
+
+
+# *************************************************'
 
 if __name__ == "__main__":
+    
     list1 = Linkedlist()
     list2 = Linkedlist()
     # print('************ insert **********')
@@ -156,24 +162,20 @@ if __name__ == "__main__":
     print(list1.ll_kth_from_end(2))
     print(list1.ll_kth_from_end(6))
     # print('*********** append ***********')
-    list1.append(1)
-    list1.append(2)
-    list1.append(3)
-    list1.append(4)
-    list1.append(5)
-    list1.append(6)
-    list1.append(7)
-    list2.append(9)
-    list2.append(10)
-    list2.append(11)
+    # list1.append(1)
+    # list1.append(2)
+    # list1.append(3)
+    # list2.append(9)
+    # list2.append(10)
+    # list2.append(11)
+    # print('*********** zipped List ***********')
+    # print('l1: ', list1.to_string())
+    # print('l2: ', list2.to_string())
+    # print('final: ', list1.zip_lists(list2).to_string())
     # print('*********** insert before ***********')
-    list1.insertBefore(555, 6)
+    list1.insertBefore(555, 3)
     # print('***********insert after ***********')
-    list1.insertAfter(555, 6)
-    print('*********** zipped List ***********')
-    # print(list1.zip_lists(list2))
+    list1.insertAfter(555, 3)
     print(' *********** to string ***********')
     print(list1.to_string())
-    # print(list2.to_string())
-    print(' **********************')
 
