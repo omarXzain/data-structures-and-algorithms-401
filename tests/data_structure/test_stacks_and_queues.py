@@ -9,25 +9,25 @@ def test_push():
     expected = 5
     assert actual == expected
 
-def test_pop():
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    stack.pop()
-    actual = stack.top.value
-    expected = 2
-    assert actual == expected
+# def test_pop():
+#     stack = Stack()
+#     stack.push(1)
+#     stack.push(2)
+#     stack.push(3)
+#     stack.pop()
+#     actual = stack.top.value
+#     expected = 2
+#     assert actual == expected
     
-def test_peek_Stack():
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    stack.peek()
-    actual = stack.top.value
-    expected = 3
-    assert actual == expected
+# def test_peek_Stack():
+#     stack = Stack()
+#     stack.push(1)
+#     stack.push(2)
+#     stack.push(3)
+#     stack.peek()
+#     actual = stack.top.value
+#     expected = 3
+#     assert actual == expected
 
 def test_isEmpty_Stack():
     stack = Stack()

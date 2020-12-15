@@ -50,6 +50,6 @@ if __name__ == "__main__":
     shelter.enqueue('dog','dog1')
     shelter.enqueue('dog','dog3')
     shelter.enqueue('cat','cat2')
-    print('peeked animal: ',shelter.peek_at_animal())
-    print('peeked type: ',shelter.peek_at_type())
+    print('peeked animal: ', shelter.peek_at_animal())
+    print('peeked type: ', shelter.peek_at_type())
     print(shelter.dequeue('cat1'))
