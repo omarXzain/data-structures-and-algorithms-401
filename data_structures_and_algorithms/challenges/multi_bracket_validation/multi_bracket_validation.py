@@ -7,8 +7,9 @@ def multi_bracket_validation(strings):
     for x in strings:
         if (x == '(' or x == '{' or x == '['):
             arr.append(x)
-
-        else:
+        elif x in obj.values():
+            if len(arr) == 0:
+                return False
             item = arr.pop()
             if x != obj[item]:
                 return False
@@ -18,9 +19,11 @@ def multi_bracket_validation(strings):
     
     return True
 
-print(multi_bracket_validation('(){}'))
-print(multi_bracket_validation('({()}'))
-print(multi_bracket_validation('({())'))
-print(multi_bracket_validation('({())))'))
-print(multi_bracket_validation('({()]'))
-print(multi_bracket_validation('({()})'))
+if __name__ == "__main__":
+    print(multi_bracket_validation('(){}'))
+    print(multi_bracket_validation('()[[Extra Characters]]'))
+    print(multi_bracket_validation('({()}'))
+    print(multi_bracket_validation('({())'))
+    print(multi_bracket_validation('({())))'))
+    print(multi_bracket_validation('({()]'))
+    print(multi_bracket_validation('({()})'))
