@@ -12,15 +12,16 @@ class Stack:
         node = Node(data)
         if self.top:
             node.next = self.top
-        self.top = node
+        else:
+            self.top = node
 
     def pop(self):
         # return some data
         try:
-            item = self.top
+            current = self.top
             self.top = self.top.next
             self.top.next = None
-            return item.value
+            return current.value
         except:
             return('no value to pop')
 
