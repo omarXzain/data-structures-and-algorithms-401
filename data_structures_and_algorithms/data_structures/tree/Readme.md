@@ -6,3 +6,12 @@ Create a BinaryTree class
 
 ## White Board
 ![img](../../../assets/tree.jpg)
+
+# ==========================================
+
+## Code Challenge: Class 16 find-maximum-binary-tree
+### Challenge
+- Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## White Board
+![img](../../../assets/find_maximum_value.jpg)
