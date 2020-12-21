@@ -7,6 +7,7 @@ class Node:
 class BinaryTree:
     def __init__(self):
         self.root = None
+        self.maxVal = 0
 
 
     def preorder(self):
@@ -53,12 +54,26 @@ class BinaryTree:
         _walk(self.root)
         return output
     
+    def find_maximum_value(self, tree):
+    
+        def _walk(node):
+            if self.maxVal < node.value:
+                self.maxVal = node.value
+            
+            if node.left:
+                _walk(node.left)
+            if node.right:
+                _walk(node.right)
+                
+        _walk(self.root)
+        return self.maxVal
+    
 # ************************************** BST ************************************************* #
     
 class BinarySearchTree:
     def __init__(self):
         self.root = None
-        self.maxVal = 0
+
         
         
     def add(self, value):
@@ -104,21 +119,6 @@ class BinarySearchTree:
             return False
         
         
-    def find_maximum_value(self, tree):
-    
-        def _walk(node):
-            if self.maxVal < node.value:
-                self.maxVal = node.value
-            
-            if node.left:
-                _walk(node.left)
-            if node.right:
-                _walk(node.right)
-                
-        _walk(self.root)
-        return self.maxVal
-
-
 
 if __name__ == "__main__":
     bt = BinaryTree()
@@ -133,6 +133,7 @@ if __name__ == "__main__":
     print(bt.preorder())
     print(bt.inorder())
     print(bt.postorder())
+    print('The Maximum Value of BinarTree is:',bt.find_maximum_value(bt))
     print('*************** BST ****************')
     bst.add(4)
     bst.add(9)
@@ -142,4 +143,3 @@ if __name__ == "__main__":
     bst.add(8)
     bst.add(5)
     print(bst.contains(8))
-    print(bst.find_maximum_value(bst))
