@@ -15,3 +15,21 @@ Create a BinaryTree class
 
 ## White Board
 ![img](../../../assets/find_maximum_value.jpg)
+
+# ============================================
+
+## Code Challenge: Class 17
+
+# Challenge Summary
+Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach.
+
+## Challenge Description
+- return a list of the values in the tree in the order they were encountered.
+
+## Approach & Efficiency
+Big(o) ===> O(N)
+
+## Solution
+![img](../../../assets/breadth-first.jpg)
+
+# ============================================
