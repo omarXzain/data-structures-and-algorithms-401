@@ -69,3 +69,4 @@ def test_contains2():
     actual = bst.contains(12)
     expected = False
     assert actual == expected
+    

@@ -68,6 +68,46 @@ class BinaryTree:
         _walk(self.root)
         return self.maxVal
     
+    
+    def breadth_first(self, tree):
+        temp = []
+        results = []
+        
+        if self.root:
+            temp.append(self.root)
+            
+            while temp:
+                node = temp.pop()
+                results.append(node.value)
+                
+                if node.left:
+                    temp.append(node.left.value)
+                if node.right:
+                    temp.append(node.right.value)
+                return results
+        else:
+            return 'EMPTY'
+            
+#         #Output
+# # [2,7,5,2,6,9,5,11,4]
+#     def breadth_first(self,tree):
+#         roo = self.root
+#         kolshi = []
+#         if roo:
+#             kolshi.append(roo)
+#             print('helloooooooo',kolshi)
+#         while kolshi:
+#                 if roo:
+#                      def _walk(node):
+#                         if node.left:
+#                             _walk(node.left)
+#                         if node.right:
+#                             _walk(node.right)
+#                 # else:
+#                 #     if not roo:
+#                 #         except Exception:
+#                 #             return "EMPTY"
+    
 # ************************************** BST ************************************************* #
     
 class BinarySearchTree:
@@ -119,6 +159,26 @@ class BinarySearchTree:
             return False
         
         
+    def breadth_first(self, tree):
+        temp = []
+        results = []
+        
+        if self.root:
+            temp.append(self.root)
+            
+            while temp:
+                node = temp.pop()
+                results.append(node.value)
+                
+                if node.left:
+                    temp.append(node.left)
+                if node.right:
+                    temp.append(node.right)
+            return results
+        else:
+            return 'EMPTY'    
+        
+        
 
 if __name__ == "__main__":
     bt = BinaryTree()
@@ -130,11 +190,12 @@ if __name__ == "__main__":
     bt.root.right.left = Node(7)
     bt.root.left.left = Node(10)
     bt.root.right.right = Node(3)
-    print(bt.preorder())
-    print(bt.inorder())
-    print(bt.postorder())
-    print('The Maximum Value of BinarTree is:',bt.find_maximum_value(bt))
-    print('*************** BST ****************')
+    # print(bt.preorder())
+    # print(bt.inorder())
+    # print(bt.postorder())
+    # print('The Maximum Value of BinarTree is:',bt.find_maximum_value(bt))
+    # print(bt.breadth_first(bt))
+    # print('*************** BST ****************')
     bst.add(4)
     bst.add(9)
     bst.add(-1)
@@ -142,4 +203,5 @@ if __name__ == "__main__":
     bst.add(3)
     bst.add(8)
     bst.add(5)
-    print(bst.contains(8))
+    # print(bst.contains(8))
+    print(bst.breadth_first(bst))
