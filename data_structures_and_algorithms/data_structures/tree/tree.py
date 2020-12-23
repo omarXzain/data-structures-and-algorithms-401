@@ -158,11 +158,13 @@ class BinarySearchTree:
                     temp.append(node.right)
             return results
         else:
-            return 'EMPTY'    
-    
+            return 'EMPTY' 
+        
+        
 
-        
-        
+
+    #-------------------------------------
+
 
 if __name__ == "__main__":
     bt = BinaryTree()
