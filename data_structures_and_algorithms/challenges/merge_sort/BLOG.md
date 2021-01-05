@@ -1,54 +1,46 @@
-# Code Challenge: Class 27 | Merge Sort
+# Code Challenge: Class 28 | Quick Sort
 
 ## Challenge Description
 - Provide a visual step through for each of the sample arrays based on the provided pseudo code
 - Convert the pseudo-code into working code in your language
-Present a complete set of working tests
+- Present a complete set of working tests
 
 ## Solution
 
 ```
-def Mergesort(arr):
-    n = len(arr)
+def QuickSort(arr, left, right):
+    if left < right: 
+        position = Partition(arr, left, right)
+        QuickSort(arr, left, position - 1)
+        QuickSort(arr, position + 1, right)
 
-    if n > 1:
-        mid = n//2
-        left = arr[0:mid]
-        right = arr[mid:n]
-        
-        Mergesort(left) # sort the left side
-        
-        Mergesort(right) # sort the right side
-        
-        Merge(left, right, arr) # merge the sorted left and right sides together
+def Partition(arr, left, right):
+    pivot = arr[right]
+    low = left - 1
+    for i in range (left , right):
+        if arr[i] <= pivot:
+            low += 1
+            Swap(arr, i, low)
 
-def Merge(left, right, arr):
-    i = 0
-    j = 0
-    k = 0
+    Swap(arr, right, low + 1)
+    # return the pivot index point
+    return low + 1
 
-    while i < len(left) and j < len(right):
-        
-        if left[i] <= right[j]:
-            arr[k] = left[i]
-            i += 1
-        else:
-            arr[k] = right[j]
-            j +=  1
-            
-        k += 1
-
-    while i < len(left):
-        arr[k] = left[i]
-        i += 1
-        k += 1
-    
-    while j < len(right):
-        arr[k] = right[j]
-        j += 1
-        k += 1
+def Swap(arr, i, low):
+    temp = arr[i]
+    arr[i] = arr[low]
+    arr[low] = temp
 ```
-- we split the array into 2 parts from the middle after getting length the split every part again and again until single elements left using recursion save it as left and right of every part then assign values to the parent using it's pointer
+## Algorithm
+- we pick the highest index value as a pivot then Partition the array by setting the position of the pivot value and create a variable to track the largest index of numbers lower than the defined pivot
+- all numbers smaller than the pivot are on the left, larger on the right. 
+- while value at left is less than pivot move right
+- while value at right is greater than pivot move left
+- return the pivot index point
+
+# Big O
+Time: O(n^2)
+space O(1)
 
 ### white board
-![](../../../assets/merge_sort.png)
+![](../../../assets/quick_sort.png)
