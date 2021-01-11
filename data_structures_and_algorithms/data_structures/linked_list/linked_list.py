@@ -178,4 +178,3 @@ if __name__ == "__main__":
     list1.insertAfter(555, 3)
     print(' *********** to string ***********')
     print(list1.to_string())
-

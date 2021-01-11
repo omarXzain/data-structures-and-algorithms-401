@@ -5,5 +5,9 @@
 
 ### Approach & Efficiency
 fifo-animal-shelter
-
+1. using queue class to create queue
+2. create dog ans cat class
+3. create animale shelter class that hold classes dog and car from queue
+4. create enqueue methor to add cat to the cat queue or dog the dog queue
+5. create dequeue to delete dog from the
 ![img](../../../assets/fifo-animal-shelter.png)

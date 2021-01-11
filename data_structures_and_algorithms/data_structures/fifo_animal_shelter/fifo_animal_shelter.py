@@ -3,6 +3,15 @@ class AnimalShelter:
         self.storage = []
         self.type = []
 
+
+
+    '''
+    Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+    Implement the following methods:
+    enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
+    dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
+    '''
+    
     def enqueue(self, animal, animal_type):
         if animal:
             if animal == 'cat' or animal == 'dog':
@@ -13,8 +22,6 @@ class AnimalShelter:
 
 
     def dequeue(self, pref):
-        # print(pref)
-        # print(self.type, self.storage)
         if pref:
             while len(self.type) != 0:
                 if self.peek_at_type() == pref:
@@ -53,3 +60,42 @@ if __name__ == "__main__":
     print('peeked animal: ', shelter.peek_at_animal())
     print('peeked type: ', shelter.peek_at_type())
     print(shelter.dequeue('cat1'))
+
+
+
+# from data_structures_and_algorithms.stacks_and_queues.stacks_and_queues import Node,Queue
+# class Dog:
+#     type = 'dog'
+#     def __init__(self,name):
+#         self.name = name
+
+# class Cat:
+#     type = 'cat'
+#     def __init__(self,name):
+#         self.name = name
+
+# class AnimalShelter():
+#     def __init__(self):
+#         self.dogs = Queue()
+#         self.cats = Queue()
+
+#     def enqueue(self,animal):
+#         try:
+#             if animal.type == 'cat':
+#                 self.cats.enqueue(animal)
+#             elif animal.type == 'dog':
+#                 self.dogs.enqueue(animal)
+#         except AttributeError as e:
+#             return 'Add Cat or Dog Only'
+
+#     def dequeue(self,pref):
+
+#         try:
+#             if pref == 'cat':
+#                 cat = self.cats.dequeue()
+#                 return cat.name
+#             elif pref == 'dog':
+#                 dog = self.dogs.dequeue()
+#                 return dog.name
+#         except AttributeError as e:
+#             return None

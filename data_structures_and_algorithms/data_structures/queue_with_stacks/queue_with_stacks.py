@@ -5,6 +5,17 @@ class Node:
         self.value = value
         self.next = None
         
+        
+        
+        ## enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
+        ## dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
+        '''
+        1. use the stack push method to attach the value into the new stack and return it
+        
+        2. use the stack pop method to remove the last value from the new stock and return it         
+        '''
+
+        
 class PseudoQueue():
     def __init__(self):
         self.front = Stack()
