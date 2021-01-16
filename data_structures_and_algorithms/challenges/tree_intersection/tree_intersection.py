@@ -13,7 +13,6 @@ def tree_intersection(tree1,tree2):
     return output
 
 
-
 if __name__ == "__main__":
     tr1=BinaryTree()
     tr2 = BinaryTree()
