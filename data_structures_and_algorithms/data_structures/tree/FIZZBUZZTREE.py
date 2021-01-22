@@ -22,6 +22,7 @@ def comapre(num):
     elif num % 5 == 0: return "Buzz"
     elif num % 3 != 0 and num % 5 != 0: return num
     else: return str(num)
+    
 
 
 if __name__ == "__main__":
